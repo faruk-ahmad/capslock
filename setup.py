@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name="capslock",
-    version="0.0.1",
+    version="0.0.4",
     author="Faruk Ahmad",
     author_email="faruk.csebrur@gmail.com",
     description="A high level python wrapper for processing text data.",
