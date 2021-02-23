@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name="capslock",
-    version="0.0.4",
+    version="0.0.6",
     author="Faruk Ahmad",
     author_email="faruk.csebrur@gmail.com",
     description="A utility python library for writing certain tasks in python easily & elegantly.",
@@ -18,6 +18,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=['numpy', 'matplotlib'],
     python_requires='>=3.5',
     
 )
