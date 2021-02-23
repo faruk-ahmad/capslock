@@ -45,11 +45,11 @@ if __name__ == '__main__':
 ```
 This will generate output like bellow: 
 
-![Output of Capslock Timing Decorator](https://github.com/faruk-ahmad/capslock/blob/main/docs/output_1.png)
+![Output of Capslock Timing Decorator](https://raw.githubusercontent.com/faruk-ahmad/capslock/main/docs/output_1.png)
 
 And it will also keep track of runtime for different runs of the ```say_hello()``` function. and will plot a graph in the same directory of your python script.
 
-![Runtime tracking using Capslock Timing Decorator](https://github.com/faruk-ahmad/capslock/blob/main/docs/say_hello.png)
+![Runtime tracking using Capslock Timing Decorator](https://raw.githubusercontent.com/faruk-ahmad/capslock/main/docs/say_hello.png)
 
 
 #### Debug Decorator
@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
 will provide you the following output with some debug information-
 
-![Debug Information using Capslock Debug Decorator](https://github.com/faruk-ahmad/capslock/blob/main/docs/debug.png)
+![Debug Information using Capslock Debug Decorator](https://raw.githubusercontent.com/faruk-ahmad/capslock/main/docs/debug.png)
 ## How to Contribute
 
 You can contribute in different ways. You can add more decorators for frequently used tasks in day to day development works.
