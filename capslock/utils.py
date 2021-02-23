@@ -48,10 +48,12 @@ def plot_time(func_name, num_of_runs=5):
         when, what = read_timing_db(func_name)
         slice_id = -1 * num_of_runs
         x = np.array([i+1 for i in range(len(what))])
-        plt.plot(x[slice_id:], what[slice_id:], '-ro')
+        plt.plot(x[slice_id:], what[slice_id:], '-ro', label="runtime")
         plt.xticks(x[slice_id:], when[slice_id:], size='small', rotation=45, fontsize=7)
         plt.xlabel('Date-Time')
         plt.ylabel('Rum Time')
+        plt.title(f"Run Time Tracking for {func_name}() function")
+        plt.legend()
         plt.tight_layout()
         plt.savefig(save_path)
         # plt.show()

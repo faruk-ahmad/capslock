@@ -2,7 +2,7 @@
 ----------------------------------------------
 #### A utility python library for writing certain tasks in python easily & elegantly.
 -----------------------------------------------
-
+[The library is still in development. The doc is not completed yet. You can contribute to improve the library.]
 ## Background
 <p align= "justify">
 
@@ -25,9 +25,51 @@ pip uninstall capslock
 
 ## Getting Started
 
-To use ```capslock``` install it using ```pip```. And make sure you have the required python version in your environment, i.e. ```python >= 3.5```.
+### How to use decorators from capslock
+
+    Capslock defines different decorators that can be used out of the box for certain frequent tasks. E.g. getting the run time of certain function over the period of optimization in development phase.
+
+#### Timing Decorator
+
+    To keep track of the execution time of a function in your project for optimizing it over the time, just put the "timing" decorator in your desired function. Capslock will keep track of different run of that function and will plot a well visualized graph for last five execution time of that function.
+
+```python
+from capslock import timing
+
+@timing
+def say_hello():
+    print("Hello World")
+
+if __name__ == '__main__':
+    say_hello()
+```
+This will generate output like bellow: 
+
+![Output of Capslock Timing Decorator](./docs/output_1.png)
+
+And it will also keep track of different run of the ```say_hello()``` function. and will plot a graph in the root directory of your script.
+
+![Runtime tracking using Capslock Timing Decorator](./docs/say_hello.png)
 
 
+#### Debug Decorator
+
+To get debug information of anyof your function, follow the bellow instruction-
+
+```python
+from capslock import debug
+
+@debug
+def add(number1, number2):
+    return number1 + number2
+
+if __name__ == '__main__':
+    print(add(20, 30))
+```
+
+will provide you the following output with some debug information-
+
+![Debug Information using Capslock Debug Decorator](./docs/debug.png)
 ## How to Contribute
 
-## Inspiration
+You can contribute in different ways. Can add more decorators for frequently used tasks in day to day development works.
