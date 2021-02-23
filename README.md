@@ -1,14 +1,12 @@
 # CAPSLOCK
 ----------------------------------------------
-#### A high level python wrapper for processing text data easily.
+#### A utility python library for writing certain tasks in python easily & elegantly.
 -----------------------------------------------
 
 ## Background
 <p align= "justify">
 
-```capslock``` is a high level wrapper written in python for searching, matching or finding specific patterns
-in text data in a convenient & faster way with less code and efforts. It offers a set of predefined common 
-& frequently used patterns, as well as you can define your custom patterns easily.
+```capslock``` is a high level utility library written in python for writing certain frequently needed task in faster & efficient way. For example, if you want to keep track of the execution time of one of your method while optimizing it, witing code for tracking execution time can be done easily using capslock.
 </p>
 
 --------------------------------------------------

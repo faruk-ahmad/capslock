@@ -7,7 +7,7 @@ setuptools.setup(
     version="0.0.4",
     author="Faruk Ahmad",
     author_email="faruk.csebrur@gmail.com",
-    description="A high level python wrapper for processing text data.",
+    description="A utility python library for writing certain tasks in python easily & elegantly.",
     long_description=codecs.open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/faruk-ahmad/capslock",
