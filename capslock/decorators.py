@@ -10,6 +10,9 @@ Email: faruk.csebrur@gmail.com
 import os
 import functools
 import time
+from datetime import datetime
+from capslock.utils import read_timing_db, write_timing_db, plot_time
+import numpy as np
 
 
 
@@ -24,6 +27,16 @@ def timing(_func, *, plot=False):
             end_time = time.perf_counter()
             run_time = end_time - start_time
             print(f"Finished {func.__name__!r} in {run_time} secs.")
+            try:
+                when, what = read_timing_db(func.__name__)
+                d = datetime.now()
+                date_info = str(d.date()) + '\n' + str(d.time()).split('.')[0]
+                when = np.append(when, date_info)
+                what = np.append(what, run_time)
+                write_timing_db(func.__name__, when, what)
+                plot_time(func.__name__)
+            except Exception as e:
+                print(f"Could not track timings: {e}")
             return value
         return timing_decorator_wrapper
 
