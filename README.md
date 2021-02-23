@@ -27,11 +27,11 @@ pip uninstall capslock
 
 ### How to use decorators from capslock
 
-    Capslock defines different decorators that can be used out of the box for certain frequent tasks. E.g. getting the run time of certain function over the period of optimization in development phase.
+Capslock defines different decorators that can be used out of the box for certain frequent tasks. E.g. getting the run time of certain function over the period of optimization in development phase.
 
 #### Timing Decorator
 
-    To keep track of the execution time of a function in your project for optimizing it over the time, just put the "timing" decorator in your desired function. Capslock will keep track of different run of that function and will plot a well visualized graph for last five execution time of that function.
+To keep track of the execution time of a function in your project for optimizing it over the time, just put the "timing" decorator in your desired function. Capslock will keep track of different run of that function and will plot a well visualized graph for last five execution time of that function.
 
 ```python
 from capslock import timing
@@ -47,7 +47,7 @@ This will generate output like bellow:
 
 ![Output of Capslock Timing Decorator](./docs/output_1.png)
 
-And it will also keep track of different run of the ```say_hello()``` function. and will plot a graph in the root directory of your script.
+And it will also keep track of runtime for different runs of the ```say_hello()``` function. and will plot a graph in the same directory of your python script.
 
 ![Runtime tracking using Capslock Timing Decorator](./docs/say_hello.png)
 
@@ -72,4 +72,4 @@ will provide you the following output with some debug information-
 ![Debug Information using Capslock Debug Decorator](./docs/debug.png)
 ## How to Contribute
 
-You can contribute in different ways. Can add more decorators for frequently used tasks in day to day development works.
+You can contribute in different ways. You can add more decorators for frequently used tasks in day to day development works.
