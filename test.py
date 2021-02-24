@@ -1,6 +1,6 @@
 from capslock import timing
 
-@timing
+@timing(plot=True)
 def say_hello():
     for _ in range(10):
         print("Hello World")

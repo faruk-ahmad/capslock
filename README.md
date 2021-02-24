@@ -36,7 +36,7 @@ To keep track of the execution time of a function in your project for optimizing
 ```python
 from capslock import timing
 
-@timing
+@timing(plot=True)
 def say_hello():
     print("Hello World")
 
@@ -47,7 +47,7 @@ This will generate output like bellow:
 
 ![Output of Capslock Timing Decorator](https://raw.githubusercontent.com/faruk-ahmad/capslock/main/docs/output_1.png)
 
-And it will also keep track of runtime for different runs of the ```say_hello()``` function. and will plot a graph in the same directory of your python script.
+And it will also keep track of runtime for different runs of the ```say_hello()``` function. and will plot a graph in the same directory of your python script if you set ```plot=True```, otherwise the plot flag is by default ```False```.
 
 ![Runtime tracking using Capslock Timing Decorator](https://raw.githubusercontent.com/faruk-ahmad/capslock/main/docs/say_hello.png)
 

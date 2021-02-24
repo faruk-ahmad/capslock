@@ -16,7 +16,7 @@ import numpy as np
 
 
 
-def timing(_func, *, plot=False):
+def timing(_func=None, *, plot=False):
     """Return the runtime/execution time of the decorated function
     """
     def timing_decorator(func):
@@ -33,8 +33,9 @@ def timing(_func, *, plot=False):
                 date_info = str(d.date()) + '\n' + str(d.time()).split('.')[0]
                 when = np.append(when, date_info)
                 what = np.append(what, run_time)
-                write_timing_db(func.__name__, when, what)
-                plot_time(func.__name__)
+                write_timing_db(func.__name__, when[-5:], what[-5:]) # -5:  store last 5 run time records
+                if plot:
+                    plot_time(func.__name__)
             except Exception as e:
                 print(f"Could not track timings: {e}")
             return value
