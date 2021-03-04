@@ -65,5 +65,27 @@ def debug(_func, *, write=False):
         return debug_decorator
     return debug_decorator(_func)
 
+
+def run_multiple_times(times):
+    """
+    Runs the decorated function multiple times, and print out outputs.
+
+    Parameters
+    ----------
+        times : int
+            How many times the decorated function should run
+    """
+    def run_recurrent(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            outputs = []
+            for _ in range(times):
+                output = func(*args, **kwargs)
+                outputs.append(output)
+            return outputs
+        return wrapper
+    return run_recurrent
+
+
 if __name__ == '__main__':
     pass
