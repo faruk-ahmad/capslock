@@ -1,10 +1,6 @@
 """
 This module introduces some decorators that can
 be used for some frequent tasks.
-
-Author: Faruk Ahmad
-Date: 23/02/2021
-Email: faruk.csebrur@gmail.com
 """
 
 import os

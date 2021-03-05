@@ -70,6 +70,27 @@ if __name__ == '__main__':
 will provide you the following output with some debug information-
 
 ![Debug Information using Capslock Debug Decorator](https://raw.githubusercontent.com/faruk-ahmad/capslock/main/docs/debug.png)
+
+
+#### Run Multiple Times Decorator
+
+To run a function multiple times, use the ```run_multiple_times``` decorator from capslock package.
+
+```python
+from datetime import datetime
+from capslock import run_multiple_times
+
+@run_multiple_times(times=10)
+def current_time():
+    now = datetime.now()
+    return now.strftime("%H:%M:%S.%f")
+
+if __name__ == '__main__':
+    print(current_time())
+```
+
+will run the current time function 10 times.
+
 ## How to Contribute
 
 You can contribute in different ways. You can add more decorators for frequently used tasks in day to day development works.
