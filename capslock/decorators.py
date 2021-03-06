@@ -7,9 +7,12 @@ import os
 import sys
 import functools
 import time
-from datetime import datetime
-from capslock.utils import read_timing_db, write_timing_db, plot_time
 import numpy as np
+from datetime import datetime
+
+from capslock.utils import BCOLOR
+from capslock.utils import read_timing_db, write_timing_db, plot_time
+
 
 
 
@@ -97,7 +100,27 @@ def require_root(func):
             sys.exit(0)
     return wrapper
 
+def color_output(color):
+    """Print/Writes colorful info of the decorated function
 
+    Args:
+        color (str): color name(
+            at present support  BLUE, CYAN, GREEN, YELLOW, RED, BOLD, UNDERLINE
+            )
+    """
+    def color_decorator(func):
+        @functools.wraps(func)
+        def color_decorator_wrapper(*args, **kwargs):
+            value = func(*args, **kwargs)
+            bcolors = BCOLOR()
+            mycolor = bcolors.mycolor(color)
+            if mycolor:
+                print(f"{mycolor}{str(value)}{bcolors.ENDC}")
+            return value
+        return color_decorator_wrapper
+    if color is None:
+        return color_decorator
+    return color_decorator
 
 if __name__ == '__main__':
     pass

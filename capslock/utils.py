@@ -59,3 +59,29 @@ def plot_time(func_name, num_of_runs=5):
         # plt.show()
     except Exception as e:
         print(f"Could not plot the run times. Please check your code. {e}")
+
+class BCOLOR:
+    """Python color to decorate consol output
+       Thanks to this stackoverflow thread
+       https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal
+    """
+    ENDC = '\033[0m'
+    def mycolor(self, color):
+        if color == 'BLUE':
+            return '\033[94m'
+        if color == 'CYAN':
+            return '\033[96m'
+        if color == 'GREEN':
+            return '\033[92m'
+        if color == 'YELLOW':
+            return '\033[93m'
+        if color == 'RED':
+            return '\033[91m'
+        if color == 'BOLD':
+            return '\033[1m'
+        if color == 'UNDERLINE':
+            return '\033[4m'
+        else:
+            print(f"No {color} decorator color found!")
+            print("please input color from this list:")
+            print("BLUE, CYAN, GREEN, YELLOW, RED, BOLD, UNDERLINE")

@@ -114,6 +114,22 @@ if __name__ == '__main__':
 
 Now, ```say_hello()``` will only run, if the user is root.
 
+### Color your function output decorator
+If you want to see your function output as colorful this method might help you to color your function output.
+At present this method support these colors `BLUE, CYAN, GREEN, YELLOW, RED, BOLD, UNDERLINE`
+
+```py
+from capslock import color_output
+
+@color_output("RED")
+def hello_color():
+    return "Hey! How are you!"
+
+if __name__ == '__main__':
+    hello_color()
+
+```
+
 
 ## How to Contribute
 
