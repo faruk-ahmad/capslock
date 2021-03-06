@@ -100,7 +100,7 @@ def require_root(func):
             sys.exit(0)
     return wrapper
 
-def color_function_output(color):
+def color_output(color):
     """Print/Writes colorful info of the decorated function
 
     Args:

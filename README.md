@@ -119,9 +119,9 @@ If you want to see your function output as colorful this method might help you t
 At present this method support these colors `BLUE, CYAN, GREEN, YELLOW, RED, BOLD, UNDERLINE`
 
 ```py
-from capslock import color_function_output
+from capslock import color_output
 
-@color_function_output("RED")
+@color_output("RED")
 def hello_color():
     return "Hey! How are you!"
 

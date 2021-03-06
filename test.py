@@ -1,5 +1,5 @@
 from capslock import require_root
-from capslock import color_function_output
+from capslock import color_output
 
 @require_root
 def say_hello():
@@ -7,7 +7,7 @@ def say_hello():
         print("Hello World")
 
 
-@color_function_output("GREEN")
+@color_output("GREEN")
 def hello_color():
     return "Hey! How are you!"
 
