@@ -29,7 +29,7 @@ pip uninstall capslock
 
 Capslock defines different decorators that can be used out of the box for certain frequent tasks. E.g. getting the run time of certain function over the period of optimization in development phase.
 
-#### Timing Decorator
+### Timing Decorator
 
 To keep track of the execution time of a function in your project for optimizing it over the time, just put the "timing" decorator in your desired function. Capslock will keep track of different run of that function and will plot a well visualized graph for last five execution time of that function.
 
@@ -52,7 +52,7 @@ And it will also keep track of runtime for different runs of the ```say_hello()`
 ![Runtime tracking using Capslock Timing Decorator](https://raw.githubusercontent.com/faruk-ahmad/capslock/main/docs/say_hello.png)
 
 
-#### Debug Decorator
+### Debug Decorator
 
 To get debug information of anyof your function, follow the bellow instruction-
 
@@ -72,7 +72,7 @@ will provide you the following output with some debug information-
 ![Debug Information using Capslock Debug Decorator](https://raw.githubusercontent.com/faruk-ahmad/capslock/main/docs/debug.png)
 
 
-#### Run Multiple Times Decorator
+### Run Multiple Times Decorator
 
 To run a function multiple times, use the ```run_multiple_times``` decorator from capslock package.
 
@@ -90,6 +90,30 @@ if __name__ == '__main__':
 ```
 
 will run the current time function 10 times.
+
+
+### Require Root previllege Decorator
+
+If you want to prevent some accidental execution of a certain part of code
+that might cause system-wide changes and you wish the user to have root
+previllege before running that part of the python code, just use the
+```require_root``` decorator from capslock.
+
+```python
+from capslock import require_root
+
+@require_root
+def say_hello():
+    for _ in range(10):
+        print("Hello World")
+
+
+if __name__ == '__main__':
+    say_hello()
+```
+
+Now, ```say_hello()``` will only run, if the user is root.
+
 
 ## How to Contribute
 

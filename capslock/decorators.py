@@ -4,6 +4,7 @@ be used for some frequent tasks.
 """
 
 import os
+import sys
 import functools
 import time
 from datetime import datetime
@@ -81,6 +82,21 @@ def run_multiple_times(times):
             return outputs
         return wrapper
     return run_recurrent
+
+
+def require_root(func):
+    """Runs the decorated function only if user has root/sudo permission
+    """
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        if os.getuid() == 0:
+            result = func(*args, **kwargs)
+            return result
+        else:
+            print(f"[PERMISSION REQUIRED!] You need to be a root user to execute function [{func.__name__}()]")
+            sys.exit(0)
+    return wrapper
+
 
 
 if __name__ == '__main__':

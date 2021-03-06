@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name="capslock",
-    version="1.0.6",
+    version="1.0.7",
     author="Faruk Ahmad",
     author_email="faruk.csebrur@gmail.com",
     description="A utility python library for writing certain tasks in python easily & elegantly.",

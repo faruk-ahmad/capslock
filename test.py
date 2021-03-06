@@ -1,6 +1,6 @@
-from capslock import timing
+from capslock import require_root
 
-@timing(plot=True)
+@require_root
 def say_hello():
     for _ in range(10):
         print("Hello World")
