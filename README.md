@@ -130,6 +130,25 @@ if __name__ == '__main__':
 
 ```
 
+### Restrict Memory check before Memory intensive workload function execution
+If you have a memory intensive workload function and you know the minimum memory requriement, 
+you can restrict the fucntion execution by checking the available memory in that system beforehand
+by using this decorator.
+
+```py
+from capslock import requires_ram
+
+@requires_ram(8)
+def memory_intensive_task():
+    print("Running a memory-intensive task...")
+
+
+if __name__ == '__main__':
+    memory_intensive_task()
+
+```
+If the system has less memory than mentioned in the decorator, the function will not execute.
+E.g., in the above example, if the system has 8 GB or more RAM, then the function will execute.
 
 ## How to Contribute
 

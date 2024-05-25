@@ -5,6 +5,7 @@ be used for some frequent tasks.
 
 import os
 import sys
+import psutil
 import functools
 import time
 import numpy as np
@@ -12,8 +13,6 @@ from datetime import datetime
 
 from capslock.utils import BCOLOR
 from capslock.utils import read_timing_db, write_timing_db, plot_time
-
-
 
 
 def timing(_func=None, *, plot=False):
@@ -121,6 +120,26 @@ def color_output(color):
     if color is None:
         return color_decorator
     return color_decorator
+
+def requires_ram(min_ram_gb):
+    """
+    Decorator to check if the system has at least `min_ram_gb` GB of RAM.
+    If the system has less RAM, the function will not be executed.
+    
+    Parameters:
+    min_ram_gb (float): The minimum amount of RAM in gigabytes required to run the function.
+    """
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            total_ram_gb = psutil.virtual_memory().total / (1024 ** 3)
+            if total_ram_gb >= min_ram_gb:
+                return func(*args, **kwargs)
+            else:
+                print(f"Function '{func.__name__}' requires at least {min_ram_gb} GB of RAM. System has {total_ram_gb:.2f} GB.")
+                return None
+        return wrapper
+    return decorator
 
 if __name__ == '__main__':
     pass
